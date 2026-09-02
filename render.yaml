@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: api-rbs-solar
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://rahulbhardwaz2k1_db_user:KxB0fKm9w93nIH4r@cluster0.50akhzt.mongodb.net/rbs-solar?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: 7f3c9d2a8b4e1f6c0d9a7b5e3
+      - key: ADMIN_NAME
+        value: Admin RBS Solar
+      - key: ADMIN_EMAIL
+        value: rahulmishra9291@gmail.com
+      - key: ADMIN_PASSWORD
+        value: Admin@rbs123
+      - key: ADMIN_PHONE
+        value: 9305332019
+      - key: FB_APP_ID
+        value: 4643571765870832
+      - key: FB_APP_SECRET
+        value: 4aa60f940a81775a532d67bc631cd362
+      - key: FB_WEBHOOK_VERIFY_TOKEN
+        value: rbssolar_secure_token_123

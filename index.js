@@ -34,7 +34,12 @@ if (process.env.NODE_ENV === 'development') {
 
 // Serve static uploads
 const path = require('path');
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+const fs = require('fs');
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+app.use('/uploads', express.static(uploadsDir));
 
 // Routes
 app.use('/api/auth', require('./src/routes/authRoutes'));
@@ -55,7 +60,7 @@ app.post('/api/webhook', require('./src/controllers/contactController').handleWe
 
 
 app.get('/', (req, res) => {
-  res.send('Azad Volthut Power LLP CRM API is running...');
+  res.send('RBS Solar CRM API is running...');
 });
 
 const PORT = process.env.PORT || 5000;
