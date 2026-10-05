@@ -54,6 +54,7 @@ app.use('/api/contacts', require('./src/routes/contactRoutes'));
 app.use('/api/product-prices', require('./src/routes/productPriceRoutes'));
 app.use('/api/inventory', require('./src/routes/inventoryRoutes'));
 app.use('/api/estimations', require('./src/routes/estimationRoutes'));
+app.use('/api/meetings', require('./src/routes/meetingRoutes'));
 app.use('/api/upload', require('./src/routes/uploadRoutes'));
 app.post('/api/website-webhook', require('./src/controllers/contactController').handleWebsiteWebhook);
 app.post('/api/webhook', require('./src/controllers/contactController').handleWebsiteWebhook);
